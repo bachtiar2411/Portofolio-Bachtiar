@@ -169,6 +169,11 @@ section h3::after {
 .ps {
   width: 85%;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 .col-4 {
   width: 25%;
   box-sizing: border-box;
@@ -176,9 +181,17 @@ section h3::after {
   float: left;
   text-align: center;
   margin-bottom: 15px;
+  transition: transform 0.3s;
 }
 .col-4 img {
   width: 100%;
+  height: auto;
+  display: block;
+}
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 .col-4 a:hover img {
   transform: scale(1.2);
@@ -215,7 +228,8 @@ html {
     display: none;
   }
   .col-4 {
-    width: 50%;
+    width: 48%;
+    margin: 1%;
   }
   .col-3 {
     width: 100%;
